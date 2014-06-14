@@ -41,7 +41,7 @@ endif;
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Easy Parking</a>
+          <a class="navbar-brand" href="#"><font color="#ff4500">Easy</font> Parking</a>
         </div>
         <div class="navbar-collapse collapse">
 
@@ -64,28 +64,32 @@ endif;
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Easy Parking</h1>
+        <h1><font color="#ff4500">Easy</font> Parking</h1>
         <p>東京が抱える悩み、「バイクを停める場所がない！」民家や土地所有者が、空いてる土地を空いている時間帯だけ貸し出し、好きな場所に駐車できるサービスです。違法駐車は辞めましょう。</p>
       </div>
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
+    <div class="container marketing">
       <div class="row">
-        <div class="col-md-4">
-          <h3>バイクを停める場所を探す</h3>
-            <p><a class="btn btn-default" href="#" role="button">会員登録 &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h3>空いてる時間に場所を貸してお小遣いを稼ぐ</h3>
-          <p>ここに画像</p>
-          <p><a class="btn btn-default" href="#" role="button">場所を貸し出す &raquo;</a></p>
-       </div>
-       <div class="col-md-4">
-          <h3>オーナーログイン</h3>
-          <p>ここに画像</p>
+        <div class="col-lg-4">
+          <img src="/img/niwa.jpg" width="200" height="200">
+          <h2>空いている駐車場を探す</h2>
+          <p>東京ではなかなかバイクの駐車場が見つからず、つい違法駐車をしてしまうかもしれません。バイクを停めたいときに便利な場所に停めましょう。</p>
+          <p><a class="btn btn-default" href="#" role="button">会員登録 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>空いている時間に、空いている場所を貸してお小遣いを稼ぐ</h2>
+          <p>あたなが昼間使っていない駐車場、余っている庭、そのスペースを使ってお小遣いを稼ぐことが出来ます。そしてそれがそのまま我々の東京の問題解決へとつながります。</p>
+          <p><a class="btn btn-default" href="#" role="button">場所を登録する &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>オーナーログイン</h2>
+          <p>あなたが空いている時間帯を設定しましょう。</p>
           <p><a class="btn btn-default" href="#" role="button">ログイン &raquo;</a></p>
-       </div>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
       <hr>
 
