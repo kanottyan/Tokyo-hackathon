@@ -115,15 +115,17 @@ CREATE TABLE IF NOT EXISTS `parking_time_bikes` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tel_num` varchar(11) NOT NULL,
   `name` varchar(40) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `age` int(150) NOT NULL,
   `email` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_id` (`user_id`)
+  'login_id'varchar(10) NOT NULL,
+  'login_password'varchar(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -134,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- テーブルの制約 `bikes`
 --
 ALTER TABLE `bikes`
-  ADD CONSTRAINT `bikes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+  ADD CONSTRAINT `bikes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- テーブルの制約 `parking_end`
