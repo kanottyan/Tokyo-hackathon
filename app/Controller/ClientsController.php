@@ -37,7 +37,7 @@ class ClientsController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		$options = array('conditions' => array('Client.' . $this->Client->primaryKey => $id));
-		$this->set('clients', $this->User->find('first', $options));
+		$this->set('clients', $this->Clitent->find('first', $options));
 	}
 
 /**

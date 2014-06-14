@@ -1,5 +1,5 @@
-<div class="users index">
-	<h2><?php echo __('Users'); ?></h2>
+<div class="clients index">
+	<h2><?php echo __('Clients'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -8,16 +8,15 @@
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
-	<?php foreach ($users as $user): ?>
+	<?php foreach ($clients as $clients): ?>
 	<tr>
-		<td><?php echo h($user['User']['id']); ?>&nbsp;</td>
-		<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
-		<td><?php echo h($user['User']['created']); ?>&nbsp;</td>
-		<td><?php echo h($user['User']['modified']); ?>&nbsp;</td>
+		<td><?php echo h($clients['Client']['id']); ?>&nbsp;</td>
+		<td><?php echo h($clients['Client']['name']); ?>&nbsp;</td>
+		<!-- 坂本さんここからちょっと情報ついかしといて下さい。ageやemailとかとか-->
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $user['User']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $user['User']['id']), null, __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $clients['Client']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $clients['Client']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $clients['Clients']['id']), null, __('Are you sure you want to delete # %s?', $clients['Client']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -39,7 +38,7 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Clients'), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('List Comments'), array('controller' => 'comments', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Comment'), array('controller' => 'comments', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Posts'), array('controller' => 'posts', 'action' => 'index')); ?> </li>

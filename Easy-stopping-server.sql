@@ -51,7 +51,10 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `email` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL,
   `img_url` varchar(100) NOT NULL,
-  PRIMARY KEY (`client_id`)
+  `login_id` varchar(10) NOT NULL,
+  `login_password` varchar(10) NOT NULL,
+
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
