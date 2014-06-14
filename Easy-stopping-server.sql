@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2014 年 6 月 14 日 11:17
+-- Generation Time: 2014 年 6 月 14 日 19:06
 -- サーバのバージョン： 5.6.16
 -- PHP Version: 5.5.11
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
-DROP TABLE IF EXISTS `bikes`,`clients`,`parking_ends`,`parking_places`,`parking_starts`,`users`;
 
 --
 -- テーブルの構造 `bikes`
@@ -51,11 +49,38 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `email` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL,
   `img_url` varchar(100) NOT NULL,
-  `login_id` varchar(10) NOT NULL,
+  `login_id` int(11) NOT NULL,
   `login_password` varchar(10) NOT NULL,
-
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `client_id`
+--
+
+CREATE TABLE IF NOT EXISTS `client_id` (
+  `client_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `age` int(150) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  PRIMARY KEY (`client_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `parking_end`
+--
+
+CREATE TABLE IF NOT EXISTS `parking_end` (
+  `end_time` datetime NOT NULL,
+  `time_id` int(11) NOT NULL,
+  UNIQUE KEY `time_id` (`time_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -85,6 +110,18 @@ CREATE TABLE IF NOT EXISTS `parking_places` (
   PRIMARY KEY (`address_id`),
   UNIQUE KEY `client_id` (`client_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `parking_start`
+--
+
+CREATE TABLE IF NOT EXISTS `parking_start` (
+  `starttime` datetime NOT NULL,
+  `time_id` int(11) NOT NULL,
+  UNIQUE KEY `time_id` (`time_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -144,6 +181,12 @@ ALTER TABLE `bikes`
 --
 -- テーブルの制約 `parking_end`
 --
+ALTER TABLE `parking_end`
+  ADD CONSTRAINT `parking_end_ibfk_1` FOREIGN KEY (`time_id`) REFERENCES `parking_time_bikes` (`time_id`);
+
+--
+-- テーブルの制約 `parking_ends`
+--
 ALTER TABLE `parking_ends`
   ADD CONSTRAINT `parking_ends_ibfk_1` FOREIGN KEY (`time_id`) REFERENCES `parking_time_bikes` (`time_id`);
 
@@ -155,6 +198,12 @@ ALTER TABLE `parking_places`
 
 --
 -- テーブルの制約 `parking_start`
+--
+ALTER TABLE `parking_start`
+  ADD CONSTRAINT `parking_start_ibfk_1` FOREIGN KEY (`time_id`) REFERENCES `parking_time_bikes` (`time_id`);
+
+--
+-- テーブルの制約 `parking_starts`
 --
 ALTER TABLE `parking_starts`
   ADD CONSTRAINT `parking_starts_ibfk_1` FOREIGN KEY (`time_id`) REFERENCES `parking_time_bikes` (`time_id`);
