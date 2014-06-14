@@ -4,6 +4,22 @@
 		<legend><?php echo __('Add User'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
+    ?>
+
+	<?php
+		echo $this->Form->input('tel_num');
+	?>
+	<?php
+		echo $this->Form->input('gender');
+	?>
+	<?php
+		echo $this->Form->input('age');
+	?>
+	<?php
+		echo $this->Form->input('email');
+	?>
+	<?php
+		echo $this->Form->input('address');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
