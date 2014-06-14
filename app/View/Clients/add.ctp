@@ -14,13 +14,13 @@
 	<?php echo $this->Form->input('性別', array('type' => 'textarea')); ?>
 	<?php echo $this->Form->input('画像URL', array('type' => 'textarea')); ?>
 
-	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
+	</fieldset>
 		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('List Comments'), array('controller' => 'comments', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Comment'), array('controller' => 'comments', 'action' => 'add')); ?> </li>
