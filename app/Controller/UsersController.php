@@ -17,8 +17,10 @@ class UsersController extends AppController {
 
 
     function beforeFilter() {
-      parent::beforeFilter();
-      $this->Auth->allow(array('login', 'add'));
+      $this->Auth->allow();
+      //一旦全部見れるようにする
+      //parent::beforeFilter();
+      //$this->Auth->allow(array('login', 'add'));
     }
 
 /**
