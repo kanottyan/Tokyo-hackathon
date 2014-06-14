@@ -21,6 +21,15 @@
 
 App::uses('Controller', 'Controller');
 
+/**
+ * This controller does not use a model
+ *
+ * @var array
+ */
+    function beforeFilter() {
+      $this->Auth->allow();
+    }
+
 
 /**
  * Application Controller

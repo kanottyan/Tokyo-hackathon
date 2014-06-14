@@ -23,4 +23,9 @@ class ParkingPlace extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public function getAllParkingPlace(){
+		$parkplace = $this->find('all');
+		return $parkplace;
+	}
 }
