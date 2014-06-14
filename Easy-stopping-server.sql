@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `bikes` (
 --
 
 CREATE TABLE IF NOT EXISTS `clients` (
-  `client_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `age` int(150) NOT NULL,
@@ -148,7 +148,7 @@ ALTER TABLE `parking_ends`
 -- テーブルの制約 `parking_places`
 --
 ALTER TABLE `parking_places`
-  ADD CONSTRAINT `parking_places_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `clients` (`client_id`);
+  ADD CONSTRAINT `parking_places_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`);
 
 --
 -- テーブルの制約 `parking_start`
