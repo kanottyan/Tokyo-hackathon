@@ -22,52 +22,7 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `bikes`,`clients`,`parking_ends`,`parking_places`,`parking_starts`,`users`;
-
---
--- テーブルの構造 `bikes`
---
-
-CREATE TABLE IF NOT EXISTS `bikes` (
-  `bike_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `type` varchar(100) NOT NULL,
-  `size` varchar(100) NOT NULL,
-  PRIMARY KEY (`bike_id`),
-  UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- テーブルの構造 `clients`
---
-
-CREATE TABLE IF NOT EXISTS `clients` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `age` int(150) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `img_url` varchar(100) NOT NULL,
-  `login_id` int(11) NOT NULL,
-  `login_password` varchar(100) NOT NULL,
-
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- テーブルの構造 `parking_ends`
---
-
-CREATE TABLE IF NOT EXISTS `parking_ends` (
-  `end_time` datetime NOT NULL,
-  `time_id` int(11) NOT NULL,
-  UNIQUE KEY `time_id` (`time_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `parking_places`,`blank_times`,`reservations`,`users`;
 
 -- --------------------------------------------------------
 
@@ -76,40 +31,44 @@ CREATE TABLE IF NOT EXISTS `parking_ends` (
 --
 
 CREATE TABLE IF NOT EXISTS `parking_places` (
-  `address_id` int(11) NOT NULL AUTO_INCREMENT,
-  `client_id` int(11) NOT NULL,
-  `space_size` int(11) NOT NULL,
-  `nearest_station` varchar(20) NOT NULL,
-  `price_perhour` int(11) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  PRIMARY KEY (`address_id`),
-  UNIQUE KEY `client_id` (`client_id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `latitude` char(30) NOT NULL,
+  `longtitude` char(30) NOT NULL,
+  `price` int(11) NOT NULL,
+  `img_url` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
+-- --------------------------------------------------------
+
 --
--- テーブルの構造 `parking_starts`
+-- テーブルの構造 `blank_time`
 --
 
-CREATE TABLE IF NOT EXISTS `parking_starts` (
-  `starttime` datetime NOT NULL,
-  `time_id` int(11) NOT NULL,
-  UNIQUE KEY `time_id` (`time_id`)
+CREATE TABLE IF NOT EXISTS `blank_times` (
+  `parking_place_id` int(11) NOT NULL,
+  `start_time` datetime NOT NULL,
+  `end_time` datetime NOT NULL,
+  UNIQUE KEY `parking_place_id` (`parking_place_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `parking_time_bikes`
+-- テーブルの構造 `reservations`
 --
 
-CREATE TABLE IF NOT EXISTS `parking_time_bikes` (
-  `address_id` int(11) NOT NULL,
-  `bike_id` int(11) NOT NULL,
-  `time_id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`time_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `reservations` (
+  `parking_place_id` int(11) NOT NULL,
+  `starttime` datetime NOT NULL,
+  `end_time` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
+  UNIQUE KEY `parking_place_id` (`parking_place_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -123,10 +82,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(40) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `age` int(150) NOT NULL,
-  `email` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL,
-  `login_id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `login_password` varchar(100) NOT NULL,
+--
+-- 1ならユーザー、0ならクライアント
+--
+  `is_users` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -136,28 +98,22 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 --
--- テーブルの制約 `bikes`
---
-ALTER TABLE `bikes`
-  ADD CONSTRAINT `bikes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
 -- テーブルの制約 `parking_end`
 --
-ALTER TABLE `parking_ends`
-  ADD CONSTRAINT `parking_ends_ibfk_1` FOREIGN KEY (`time_id`) REFERENCES `parking_time_bikes` (`time_id`);
+ALTER TABLE `parking_places`
+  ADD CONSTRAINT `parking_places_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- テーブルの制約 `parking_places`
+-- テーブルの制約 `blank_times`
 --
-ALTER TABLE `parking_places`
-  ADD CONSTRAINT `parking_places_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`);
+ALTER TABLE `blank_times`
+  ADD CONSTRAINT `blank_times_ibfk_1` FOREIGN KEY (`parking_place_id`) REFERENCES `parking_places` (`id`);
 
 --
 -- テーブルの制約 `parking_start`
 --
-ALTER TABLE `parking_starts`
-  ADD CONSTRAINT `parking_starts_ibfk_1` FOREIGN KEY (`time_id`) REFERENCES `parking_time_bikes` (`time_id`);
+ALTER TABLE `reservations`
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`parking_place_id`) REFERENCES `parking_places` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
