@@ -20,6 +20,13 @@
 	?>
 	<?php
 		echo $this->Form->input('address');
+    ?>
+
+	<?php
+		echo $this->Form->input('login_id');
+	?>
+	<?php
+		echo $this->Form->input('login_password');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
