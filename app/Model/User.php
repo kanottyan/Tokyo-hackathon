@@ -15,9 +15,9 @@ class User extends AppModel {
  * @var array
  */
   public $hasMany = array(
-    'Bike' => array(
-      'className' => 'Bike',
-      'foreignKey' => 'user_id',
+    'ParkingPlace' => array(
+      'className' => 'ParkingPlace',
+      'foreignKey' => 'parking_place_id',
       'dependent' => false,
       'conditions' => '',
       'fields' => '',

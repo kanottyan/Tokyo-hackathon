@@ -14,6 +14,26 @@ class BlankTime extends AppModel {
  *
  * @var array
  */
+   public $belongsTo = array(
+        'ParkingPlace' => array(
+          'className' => 'ParkingPlace',
+          'foreignKey' => 'parking_place_id'
+          )
+    );
+
+   public $hasOne = array(
+        'ParkingStart' => array(
+          'className' => 'ParkingStart',
+          'foreignKey' => 'time_id'
+          ),
+        'ParkingEnd' => array('ParkingEnd',
+        'foreignKey' => 'time_id'
+          )
+    );
+
+
+
+
    # とりあえずymタイプにしときました
    public $validate = array(
         'startTime' => array(
