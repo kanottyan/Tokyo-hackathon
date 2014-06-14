@@ -8,23 +8,23 @@
  */
 
 if (!Configure::read('debug')):
-	throw new NotFoundException();
+  throw new NotFoundException();
 endif;
 
 App::uses('Debugger', 'Utility');
 ?>
 <?php
 if (Configure::read('debug') > 0):
-	Debugger::checkSecurityKeys();
+  Debugger::checkSecurityKeys();
 endif;
 ?>
 <?php
 if (file_exists(WWW_ROOT . 'css' . DS . 'cake.generic.css')):
 ?>
 <p id="url-rewriting-warning" style="backgound-color:#e32; color:#fff;">
-	<?php echo __d('cake_dev', 'URL rewriting is not properly configured on your server.'); ?>
-	1) <a target="_blank" href="http://book.cakephp.org/2.0/en/installation/url-rewriting.html" style="color:#fff;">Help me configure it</a>
-	2) <a target="_blank" href="http://book.cakephp.org/2.0/en/development/configuration.html#cakephp-core-configuration" style="color:#fff;">I don't / can't use URL rewriting</a>
+  <?php echo __d('cake_dev', 'URL rewriting is not properly configured on your server.'); ?>
+  1) <a target="_blank" href="http://book.cakephp.org/2.0/en/installation/url-rewriting.html" style="color:#fff;">Help me configure it</a>
+  2) <a target="_blank" href="http://book.cakephp.org/2.0/en/development/configuration.html#cakephp-core-configuration" style="color:#fff;">I don't / can't use URL rewriting</a>
 </p>
 <?php
 endif;
@@ -55,7 +55,7 @@ endif;
                 <button type="submit" class="btn btn-default">ログイン</button>
               </form>
             </li>
-            <li><a href="#">会員登録</a></li>
+            <li><a href="/signup">会員登録</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
