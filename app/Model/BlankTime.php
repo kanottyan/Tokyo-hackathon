@@ -21,18 +21,6 @@ class BlankTime extends AppModel {
           )
     );
 
-   public $hasOne = array(
-        'ParkingStart' => array(
-          'className' => 'ParkingStart',
-          'foreignKey' => 'time_id'
-          ),
-        'ParkingEnd' => array('ParkingEnd',
-        'foreignKey' => 'time_id'
-          )
-    );
-
-
-
 
    # とりあえずymタイプにしときました
    public $validate = array(
