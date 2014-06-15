@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2014 年 6 月 15 日 03:27
+-- Generation Time: 2014 年 6 月 15 日 04:30
 -- サーバのバージョン： 5.6.16
 -- PHP Version: 5.5.11
 
@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `parking_places` (
   `longtitude` varchar(30) CHARACTER SET utf8 NOT NULL,
   `price` int(11) NOT NULL,
   `img_url` text CHARACTER SET utf8 NOT NULL,
+  `id` int(11) NOT NULL,
   PRIMARY KEY (`parking_place_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
