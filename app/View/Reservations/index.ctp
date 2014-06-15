@@ -3,25 +3,23 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('parking_place_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('starttime'); ?></th>
+			<th><?php echo $this->Paginator->sort('start_time'); ?></th>
 			<th><?php echo $this->Paginator->sort('end_time'); ?></th>
-			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('user_email'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($reservations as $reservation): ?>
 	<tr>
 		<td>
-			<?php echo $this->Html->link($reservation['ParkingPlace']['id'], array('controller' => 'parking_places', 'action' => 'view', $reservation['ParkingPlace']['id'])); ?>
+			<?php echo $this->Html->link($reservation['ParkingPlace'][''], array('controller' => 'parking_places', 'action' => 'view', $reservation['ParkingPlace']['id'])); ?>
 		</td>
-		<td><?php echo h($reservation['Reservation']['starttime']); ?>&nbsp;</td>
+		<td><?php echo h($reservation['Reservation']['start_time']); ?>&nbsp;</td>
 		<td><?php echo h($reservation['Reservation']['end_time']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($reservation['User']['name'], array('controller' => 'users', 'action' => 'view', $reservation['User']['id'])); ?>
-		</td>
+		<td><?php echo h($reservation['Reservation']['user_email']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $reservation['Reservation']['parking_place_id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $reservation['Reservation']['parking_place_id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $reservation['Reservation']['parking_place_id']), null, __('Are you sure you want to delete # %s?', $reservation['Reservation']['parking_place_id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $reservation['Reservation']['user_email'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $reservation['Reservation']['user_email'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $reservation['Reservation']['user_email']), null, __('Are you sure you want to delete # %s?', $reservation['Reservation']['user_email'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -46,7 +44,5 @@
 		<li><?php echo $this->Html->link(__('New Reservation'), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('List Parking Places'), array('controller' => 'parking_places', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Parking Place'), array('controller' => 'parking_places', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

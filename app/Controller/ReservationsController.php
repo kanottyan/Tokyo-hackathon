@@ -56,8 +56,7 @@ class ReservationsController extends AppController {
 			}
 		}
 		$parkingPlaces = $this->Reservation->ParkingPlace->find('list');
-		$users = $this->Reservation->User->find('list');
-		$this->set(compact('parkingPlaces', 'users'));
+		$this->set(compact('parkingPlaces'));
 	}
 
 /**
@@ -83,8 +82,7 @@ class ReservationsController extends AppController {
 			$this->request->data = $this->Reservation->find('first', $options);
 		}
 		$parkingPlaces = $this->Reservation->ParkingPlace->find('list');
-		$users = $this->Reservation->User->find('list');
-		$this->set(compact('parkingPlaces', 'users'));
+		$this->set(compact('parkingPlaces'));
 	}
 
 /**
