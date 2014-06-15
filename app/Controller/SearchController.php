@@ -25,6 +25,10 @@ class SearchController extends AppController {
       //$darget_longtidute = $this->reqest->query['long'];
       $this->set(compact('darget_latitude','$darget_longtidute'));
     }
+    public $helpers = array(
+        'Html',
+        'Form'
+    );
 
 /**
  * index method
