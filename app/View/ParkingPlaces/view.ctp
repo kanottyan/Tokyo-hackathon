@@ -2,11 +2,10 @@
 <h2><?php echo __('Parking Place'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($parkingPlace['ParkingPlace']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('User'); ?></dt>
+	<div class="control-group<?php if($this->Form->error('name')) echo ' error' ?>">
+	<label for="ModelName">名称</label>
+	<?php echo $this->Form->input('name', array('label' => false, 'div' => 'controls', 'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline')))); ?>
+</div>		<dt><?php echo __('User'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($parkingPlace['User']['name'], array('controller' => 'users', 'action' => 'view', $parkingPlace['User']['id'])); ?>
 			&nbsp;

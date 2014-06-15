@@ -1,16 +1,32 @@
 <div class="parkingPlaces form">
 <?php echo $this->Form->create('ParkingPlace'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Parking Place'); ?></legend>
 	<?php
-		echo $this->Form->input('user_id');
-		echo $this->Form->input('latitude');
-		echo $this->Form->input('longtitude');
-		echo $this->Form->input('price');
-		echo $this->Form->input('img_url');
+		echo $this->Form->input('user_id', array(
+			'user_id' => 'user_id',
+			'placeholder' => 'user_id',
+		));
+		echo $this->Form->input('latitude', array(
+			'latitude' => 'latitude',
+			'placeholder' => '緯度',
+		));
+		echo $this->Form->input('longtitude', array(
+			'longtitude' => 'longtitude',
+			'placeholder' => '経度',
+		));
+		echo $this->Form->input('price', array(
+			'price' => 'price',
+			'placeholder' => '値段/h',
+		));
+		echo $this->Form->input('file', array(
+			'type' => 'file',
+			'label' => '駐車場の写真',
+			'help' => '駐車可能な場所の写真を載せて下さい。'
+		));
 	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(array(
+		'text' => 'test',
+		'class' => 'btn btn-info'
+	)); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
