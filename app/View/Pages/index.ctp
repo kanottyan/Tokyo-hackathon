@@ -30,7 +30,6 @@ if (file_exists(WWW_ROOT . 'css' . DS . 'cake.generic.css')):
 endif;
 ?>
 
-<!--以下コピペ-->
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -41,7 +40,7 @@ endif;
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><font color="#ff4500">Easy</font> Parking</a>
+          <a class="navbar-brand" href="#"><font color="#000000">Easy Parking</font></a>
         </div>
         <div class="navbar-collapse collapse">
 
@@ -52,7 +51,7 @@ endif;
                   <input type="text" class="form-control" placeholder="User ID">
                   <input type="password" class="form-control" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-default">ログイン</button>
+                <button type="submit" class="btn btn-primary">ログイン</button>
               </form>
             </li>
             <li><a href="/signup">会員登録</a></li>
@@ -61,39 +60,75 @@ endif;
       </div>
     </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1><font color="#ff4500">Easy</font> Parking</h1>
-        <p>東京が抱える悩み、「バイクを停める場所がない！」民家や土地所有者が、空いてる土地を空いている時間帯だけ貸し出し、好きな場所に駐車できるサービスです。違法駐車は辞めましょう。</p>
+    <!-- <div class="col-lg-2"></div> -->
+    <!-- <div class="col-lg-8"> -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/first.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/second.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/third.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+    <!-- </div> -->
+    <!-- <div class="col-lg-2"></div> -->
 
     <div class="container marketing">
       <div class="row">
         <div class="col-lg-4">
-          <img src="/img/niwa.jpg" width="200" height="200">
+          <span class="glyphicon glyphicon-search"></span>
           <h2>空いている駐車場を探す</h2>
-          <p>東京ではなかなかバイクの駐車場が見つからず、つい違法駐車をしてしまうかもしれません。バイクを停めたいときに便利な場所に停めましょう。</p>
-          <p><a class="btn btn-default" href="#" role="button">会員登録 &raquo;</a></p>
+          <p>東京ではなかなかバイクの駐車場が見つからず、つい違法駐車をしてしまうあなた。バイクを停めたいときに停めたい場所に停めましょう。</p>
+          <p><a class="btn btn-primary" href="#" role="button">会員登録 &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>空いている時間に、空いている場所を貸してお小遣いを稼ぐ</h2>
-          <p>あたなが昼間使っていない駐車場、余っている庭、そのスペースを使ってお小遣いを稼ぐことが出来ます。そしてそれがそのまま我々の東京の問題解決へとつながります。</p>
-          <p><a class="btn btn-default" href="#" role="button">場所を登録する &raquo;</a></p>
+
+          <h2>空いている時間の<br/>空いている場所を貸す</h2>
+          <p>あたなが昼間使っていない駐車場、余っている庭、そのスペースを使ってお小遣いを稼ぐことが出来ます。そしてそれがそのまま違法駐車等の問題解決へとつながります。</p>
+          <p><a class="btn btn-primary" href="#" role="button">場所を登録する &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
           <h2>オーナーログイン</h2>
-          <p>あなたが空いている時間帯を設定しましょう。</p>
-          <p><a class="btn btn-default" href="#" role="button">ログイン &raquo;</a></p>
+          <p>あなたが駐車場jを貸し出せる時間帯を設定しましょう。</p>
+          <p><a class="btn btn-primary" href="#" role="button">ログイン &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
+
+
 
       <hr>
 
       <footer>
+
+
       </footer>
     </div> <!-- /container -->
 

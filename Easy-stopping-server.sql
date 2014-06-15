@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2014 年 6 月 15 日 01:00
+-- Generation Time: 2014 年 6 月 15 日 03:27
 -- サーバのバージョン： 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `New_easy_stopping`
+-- Database: `Easy-stopping-server`
 --
 
 -- --------------------------------------------------------
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `blank_times` (
   `parking_place_id` int(11) NOT NULL,
-  `start_time` int(11) NOT NULL,
-  `end_time` int(11) NOT NULL
+  `start_time` datetime NOT NULL,
+  `end_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -39,12 +39,12 @@ CREATE TABLE IF NOT EXISTS `blank_times` (
 --
 
 CREATE TABLE IF NOT EXISTS `parking_places` (
-  `user_email` int(11) NOT NULL,
+  `user_email` varchar(50) CHARACTER SET utf8 NOT NULL,
   `parking_place_id` int(11) NOT NULL AUTO_INCREMENT,
-  `latitude` int(11) NOT NULL,
-  `longtitude` varchar(30) NOT NULL,
-  `price` varchar(30) NOT NULL,
-  `img_url` int(11) NOT NULL,
+  `latitude` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `longtitude` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `price` int(11) NOT NULL,
+  `img_url` text CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`parking_place_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `parking_place_id` int(11) NOT NULL,
   `start_time` datetime NOT NULL,
   `end_time` datetime NOT NULL,
-  `user_email` int(11) NOT NULL
+  `user_email` varchar(50) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -68,17 +68,29 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `user_email` varchar(50) NOT NULL,
-  `tel_num` varchar(11) NOT NULL,
-  `name` int(40) NOT NULL,
-  `gender` int(10) NOT NULL,
+  `user_email` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `tel_num` varchar(11) CHARACTER SET utf8 NOT NULL,
+  `name` varchar(40) CHARACTER SET utf8 NOT NULL,
+  `gender` tinyint(1) NOT NULL,
   `age` int(150) NOT NULL,
-  `address` int(100) NOT NULL,
-  `login_password` int(100) NOT NULL,
+  `address` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `login_password` varchar(100) CHARACTER SET utf8 NOT NULL,
   `is_users` tinyint(1) NOT NULL,
+  `id` int(11) NOT NULL,
   PRIMARY KEY (`user_email`),
   UNIQUE KEY `email` (`user_email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- テーブルのデータのダンプ `users`
+--
+
+INSERT INTO `users` (`user_email`, `tel_num`, `name`, `gender`, `age`, `address`, `login_password`, `is_users`, `id`) VALUES
+('gagogjgajlga@gmail.com', '00000000000', 'Daniel Kuristpher', 1, 50, 'aoyama-ku,tokyo,japan', '123456789', 1, 0),
+('gagogjgajlga@gmail.comhkj', '00000000000', 'Daniel Kuristpher', 1, 50, 'aoyama-ku,tokyo,japan', '123456789', 1, 0),
+('gagogjgajlhkljhklga@gmail.comhkj', '00000000000', 'Daniel Kuristpher', 1, 50, 'aoyama-ku,tokyo,japan', '123456789', 1, 0),
+('gagogjgjkajlhkljhklga@gmail.comhkj', '00000000000', 'Daniel Kuristpher', 1, 50, '????????2-11-17????????3?', '123456789', 1, 0),
+('gagogjgjkajljlkj;lhkljhklga@gmail.comhkj', '00000000000', 'Daniel Kuristpher', 1, 50, '東京都港区南青山2-11-17第一法規本社ビル3階', '123456789', 1, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
