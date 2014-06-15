@@ -1,10 +1,14 @@
+
 <div class="parkingPlaces form">
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
 <?php echo $this->Form->create('ParkingPlace'); ?>
 	<?php
 		echo $this->Form->input('user_id', array(
 			'user_id' => 'user_id',
 			'placeholder' => 'user_id',
 		));
+		
 		echo $this->Form->input('latitude', array(
 			'latitude' => 'latitude',
 			'placeholder' => '緯度',
@@ -28,7 +32,10 @@
 		'class' => 'btn btn-info'
 	)); ?>
 </div>
+<div class="col-lg-2"></div>
+
 <div class="actions">
+</div>
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
