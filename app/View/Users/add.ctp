@@ -23,6 +23,7 @@
 			'placeholder' => '男',
 		));
 	?></li>
+	<p>※チェックで男と考えて下さい。すいません</p>
 	<br/>
 	<li><?php
 		echo $this->Form->input('age', array(
