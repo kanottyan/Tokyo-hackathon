@@ -37,7 +37,33 @@ class SearchController extends AppController {
  */
     public function index() {
         $this->set('test', 'testでーす');
-        $park_data = $this->ParkingPlace->find('all');
+        $options = array(
+        'conditions' => array(
+                'AND' => array(
+                    'User.name' => 'Daniel asdfistpher',
+                    'User.name' => 'Daniel asdfistpher'
+                )
+            ) 
+        );
+                
+        $all_data = $this->ParkingPlace->find('all');
+        for($i = 0;$i<count($all_data);$i++){
+            $park_data['parking_place_id'][$i] = $all_data[$i]['ParkingPlace']['parking_place_id'];
+            $park_data['price'][$i] = $all_data[$i]['ParkingPlace']['price'];
+            $park_data['latitude'][$i] = $all_data[$i]['ParkingPlace']['latitude'];
+            $park_data['longtitude'][$i] = $all_data[$i]['ParkingPlace']['longtitude'];
+        }
+        // just test
+        #for($i = 0;$i<count($all_data);$i++){
+        #echo($park_data['parking_place_id'][$i]);
+        #}
+        #for($i = 0;$i<count($park_data);$i++){
+        #print($park_data[$i]['ParkingPlace']['price']);
+        #}
+
+        #for($i = 0;$i<count($park_data);$i++){
+        #print($park_data[$i]['ParkingPlace']['price']);
+        #}
         $this->set(compact('park_data'));
     }
 }
