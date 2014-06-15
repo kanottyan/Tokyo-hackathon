@@ -107,18 +107,18 @@ endif;
           <span class="glyphicon glyphicon-search"></span>
           <h2>空いている駐車場を探す</h2>
           <p>東京ではなかなかバイクの駐車場が見つからず、つい違法駐車をしてしまうあなた。バイクを停めたいときに停めたい場所に停めましょう。</p>
-          <p><a class="btn btn-primary" href="#" role="button">会員登録 &raquo;</a></p>
+          <p><a class="btn btn-primary" href="/search" role="button">会員登録 &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
 
           <h2>空いている時間の<br/>空いている場所を貸す</h2>
           <p>あたなが昼間使っていない駐車場、余っている庭、そのスペースを使ってお小遣いを稼ぐことが出来ます。そしてそれがそのまま違法駐車等の問題解決へとつながります。</p>
-          <p><a class="btn btn-primary" href="#" role="button">場所を登録する &raquo;</a></p>
+          <p><a class="btn btn-primary" href="/parking_places/add" role="button">場所を登録する &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <h2>オーナーログイン</h2>
           <p>あなたが駐車場jを貸し出せる時間帯を設定しましょう。</p>
-          <p><a class="btn btn-primary" href="#" role="button">ログイン &raquo;</a></p>
+          <p><a class="btn btn-primary" href="/signup" role="button">ログイン &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
