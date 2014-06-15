@@ -1,38 +1,34 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * User Model
+ * BlankTime Model
  *
- * @property Bike $Bike
+ * @property ParkingPlace $ParkingPlace
  */
 class BlankTime extends AppModel {
 
-
-  //The Associations below have been created with all possible keys, those that are not needed can be removed
 /**
- * hasMany associations
+ * Primary key field
+ *
+ * @var string
+ */
+	public $primaryKey = 'end_time';
+
+
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+/**
+ * belongsTo associations
  *
  * @var array
  */
-   public $belongsTo = array(
-        'ParkingPlace' => array(
-          'className' => 'ParkingPlace',
-          'foreignKey' => 'parking_place_id'
-          )
-    );
-
-
-   # とりあえずymタイプにしときました
-   public $validate = array(
-        'startTime' => array(
-            'rule' => array('datetime', 'ym'),
-            'message' => 'Please enter a valid date and time.'
-        ),
-        'endTime' => array(
-            'rule' => array('datetime', 'ym'),
-            'message' => 'Please enter a valid date and time.'
-        ),
-    );
+	public $belongsTo = array(
+		'ParkingPlace' => array(
+			'className' => 'ParkingPlace',
+			'foreignKey' => 'parking_place_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 }
-
-
