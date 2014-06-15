@@ -65,9 +65,10 @@ class PagesController extends AppController {
     if (!empty($path[1])) {
       $subpage = $path[1];
     }
-    if (!empty($path[$count - 1])) {
-      $title_for_layout = Inflector::humanize($path[$count - 1]);
-    }
+    //if (!empty($path[$count - 1])) {
+      $title_for_layout = "どこでも・いつでも駐めれる EasyParking | 自動車・バイク・自転車";
+      //Inflector::humanize($path[$count - 1]);
+    //}
     $this->set(compact('page', 'subpage', 'title_for_layout'));
 
     try {
