@@ -42,6 +42,10 @@
 **/
   Router::connect('/search', array('controller' => 'search', 'action' => 'index'));
 
+/**
+*ParkingPlaces
+**/
+  Router::connect('/addparking', array('controller' => 'parking_places', 'action' => 'add'));
 
 
 /**
