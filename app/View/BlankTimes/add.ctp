@@ -2,10 +2,10 @@
 	<h2>次に提供できる時間を入力して下さい<h2>
 <?php echo $this->Form->create('BlankTime'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Blank Time'); ?></legend>
 	<?php
 		echo $this->Form->input('parking_place_id');
 		echo $this->Form->input('start_time');
+		echo $this->Form->input('end_time');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
