@@ -38,6 +38,13 @@
   Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
 
 /**
+* Search
+**/
+  Router::connect('/search', array('controller' => 'search', 'action' => 'index'));
+
+
+
+/**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
  */
