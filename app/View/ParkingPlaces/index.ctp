@@ -2,7 +2,7 @@
 	<h2><?php echo __('Parking Places'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
+			<th><?php echo $this->Paginator->sort('parking_place_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('latitude'); ?></th>
 			<th><?php echo $this->Paginator->sort('longtitude'); ?></th>
@@ -12,7 +12,7 @@
 	</tr>
 	<?php foreach ($parkingPlaces as $parkingPlace): ?>
 	<tr>
-		<td><?php echo h($parkingPlace['ParkingPlace']['id']); ?>&nbsp;</td>
+		<td><?php echo h($parkingPlace['ParkingPlace']['parking_place_id']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($parkingPlace['User']['name'], array('controller' => 'users', 'action' => 'view', $parkingPlace['User']['id'])); ?>
 		</td>
@@ -21,9 +21,9 @@
 		<td><?php echo h($parkingPlace['ParkingPlace']['price']); ?>&nbsp;</td>
 		<td><?php echo h($parkingPlace['ParkingPlace']['img_url']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $parkingPlace['ParkingPlace']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $parkingPlace['ParkingPlace']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $parkingPlace['ParkingPlace']['id']), null, __('Are you sure you want to delete # %s?', $parkingPlace['ParkingPlace']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $parkingPlace['ParkingPlace']['parking_place_id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $parkingPlace['ParkingPlace']['parking_place_id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $parkingPlace['ParkingPlace']['parking_place_id']), null, __('Are you sure you want to delete # %s?', $parkingPlace['ParkingPlace']['parking_place_id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

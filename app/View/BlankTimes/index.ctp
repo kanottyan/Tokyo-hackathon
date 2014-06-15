@@ -10,7 +10,7 @@
 	<?php foreach ($blankTimes as $blankTime): ?>
 	<tr>
 		<td>
-			<?php echo $this->Html->link($blankTime['ParkingPlace'][''], array('controller' => 'parking_places', 'action' => 'view', $blankTime['ParkingPlace']['id'])); ?>
+			<?php echo $this->Html->link($blankTime['ParkingPlace']['parking_place_id'], array('controller' => 'parking_places', 'action' => 'view', $blankTime['ParkingPlace']['parking_place_id'])); ?>
 		</td>
 		<td><?php echo h($blankTime['BlankTime']['start_time']); ?>&nbsp;</td>
 		<td><?php echo h($blankTime['BlankTime']['end_time']); ?>&nbsp;</td>

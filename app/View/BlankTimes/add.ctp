@@ -6,6 +6,7 @@
 	<?php
 		echo $this->Form->input('parking_place_id');
 		echo $this->Form->input('start_time');
+		echo $this->Form->input('end_time');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
