@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2014 年 6 月 15 日 03:27
+-- Generation Time: 2014 年 6 月 15 日 03:49
 -- サーバのバージョン： 5.6.16
 -- PHP Version: 5.5.11
 
