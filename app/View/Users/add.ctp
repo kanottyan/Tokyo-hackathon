@@ -1,81 +1,71 @@
 <div class="users form">
 <!-- 汚くてすいませんっす -->
-<div class="col-lg-2"></div>
-<div class="col-lg-8">
 <?php echo $this->Form->create('User'); ?>
-		<legend><?php echo __('Add User'); ?></legend>
-	<?php
+		<legend><?php echo __('会員登録'); ?></legend>
+	<ul style="list-style:none">
+	<li><?php
 		echo $this->Form->input('name', array(
 			'name' => 'name',
-			'placeholder' => 'name',
+			'placeholder' => '氏名',
 		));
-    ?>
+    ?></li>
     <br/>
-	<?php
+	<li><?php
 		echo $this->Form->input('tel_num', array(
-			'label' => 'tel_num : ',
-			'placeholder' => 'tel_num',
+			'label' => 'TEL : ',
+			'placeholder' => '電話番号',
 		));
-	?>
+	?></li>
 	<br/>
-	<?php
+	<li><?php
 		echo $this->Form->input('gender', array(
-			'label' => 'gender : ',
-			'placeholder' => 'gender',
+			'label' => '性別',
+			'placeholder' => '男',
 		));
-	?>
+	?></li>
 	<br/>
-	<?php
+	<li><?php
 		echo $this->Form->input('age', array(
-			'label' => 'age : ',
-			'placeholder' => 'age',
+			'label' => '年齢 : ',
+			'placeholder' => '25歳',
 		));
-	?>
+	?></li>
 	<br/>
-	<?php
+	<li><?php
 		echo $this->Form->input('email', array(
-			'label' => 'Email address : ',
-			'placeholder' => 'Enter email',
+			'label' => 'Email : ',
+			'placeholder' => 'piyopiyo@gmail.com',
 		));
 	?>
+	</li>
 	<br/>
-	<?php
+	<li><?php
 		echo $this->Form->input('address', array(
-			'label' => 'address : ',
+			'label' => '住所 : ',
 		));
-    ?>
+    ?></li>
 	<br/>
-	<?php
+	<li><?php
         echo $this->Form->input('password', array(
 			'type' => 'password',
 			'label' => 'Password : ',
 			'placeholder' => 'Password'
 		));
-    ?>
+    ?></li>
     <br/>
-    <?php
+    <li><?php
         echo $this->Form->input('is_users', array(
 			'type' => 'checkbox',
-			'label' => 'is_users : ',
-			'checkboxLabel' => 'is_users'
+			'label' => 'バイクを停めたい！！！ ',
+			'checkboxLabel' => 'i am rider'
 		));
-    ?>
+    ?></li>
     <br/>
-<?php echo $this->Form->end(array(
+
+<li><?php echo $this->Form->end(array(
 		'text' => 'test',
 		'class' => 'btn btn-info'
-	)); ?>
-</div>
-<div class="col-lg-2"></div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-			'placeholder' => 'address',
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Comments'), array('controller' => 'comments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Comment'), array('controller' => 'comments', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Posts'), array('controller' => 'posts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Post'), array('controller' => 'posts', 'action' => 'add')); ?> </li>
+	)); ?></li>
 	</ul>
 </div>
+
