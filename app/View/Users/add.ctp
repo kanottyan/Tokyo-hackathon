@@ -16,18 +16,19 @@
 		echo $this->Form->input('age');
 	?>
 	<?php
-		echo $this->Form->input('email');
+		echo $this->Form->input('user_email');
 	?>
 	<?php
 		echo $this->Form->input('address');
     ?>
 
 	<?php
-		echo $this->Form->input('login_id');
-	?>
-	<?php
-		echo $this->Form->input('login_password');
-	?>
+        echo $this->Form->input('login_password');
+    ?>
+    <?php
+        echo $this->Form->input('is_users');
+    ?>
+ 
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
