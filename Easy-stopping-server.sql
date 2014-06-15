@@ -69,6 +69,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_email` varchar(50) CHARACTER SET utf8 NOT NULL,
   `tel_num` varchar(11) CHARACTER SET utf8 NOT NULL,
   `name` varchar(40) CHARACTER SET utf8 NOT NULL,
@@ -77,8 +78,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `address` varchar(100) CHARACTER SET utf8 NOT NULL,
   `login_password` varchar(100) CHARACTER SET utf8 NOT NULL,
   `is_users` tinyint(1) NOT NULL,
-  `id` int(11) NOT NULL,
-  PRIMARY KEY (`user_email`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`user_email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -88,10 +88,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_email`, `tel_num`, `name`, `gender`, `age`, `address`, `login_password`, `is_users`, `id`) VALUES
 ('gagogjgajlga@gmail.com', '00000000000', 'Daniel Kuristpher', 1, 50, 'aoyama-ku,tokyo,japan', '123456789', 1, 0),
-('gagogjgajlga@gmail.comhkj', '00000000000', 'Daniel Kuristpher', 1, 50, 'aoyama-ku,tokyo,japan', '123456789', 1, 0),
-('gagogjgajlhkljhklga@gmail.comhkj', '00000000000', 'Daniel Kuristpher', 1, 50, 'aoyama-ku,tokyo,japan', '123456789', 1, 0),
-('gagogjgjkajlhkljhklga@gmail.comhkj', '00000000000', 'Daniel Kuristpher', 1, 50, '????????2-11-17????????3?', '123456789', 1, 0),
-('gagogjgjkajljlkj;lhkljhklga@gmail.comhkj', '00000000000', 'Daniel Kuristpher', 1, 50, '東京都港区南青山2-11-17第一法規本社ビル3階', '123456789', 1, 0);
+('gagogjgajlga@gmail.comhkj', '00000000000', 'Daniel asdfistpher', 1, 50, 'aoyama-ku,tokyo,japan', '123456789', 1, 1),
+('gagogjgajlhkljhklga@gmail.comhkj', '00000000000', 'Ddsfl Kuristpher', 1, 50, 'aoyama-ku,tokyo,japan', '123456789', 1, 2),
+('gagogjgjkajlhkljhklga@gmail.comhkj', '00000000000', 'Danfdsl Kuristpher', 1, 50, '????????2-11-17????????3?', '123456789', 1, 3),
+('gagogjgjkajljlkj;lhkljhklga@gmail.comhkj', '00000000000', 'Daniel Kuatpher', 1, 50, '東京都港区南青山2-11-17第一法規本社ビル3階', '123456789', 1, 4);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
