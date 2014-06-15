@@ -12,7 +12,7 @@ class BlankTime extends AppModel {
  *
  * @var string
  */
-	public $primaryKey = 'end_time';
+	//public $primaryKey = 'end_time';
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
