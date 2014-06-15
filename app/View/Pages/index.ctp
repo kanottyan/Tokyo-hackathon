@@ -122,8 +122,6 @@ endif;
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
-
-
       <hr>
 
       <footer>
