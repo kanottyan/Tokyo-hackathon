@@ -25,6 +25,11 @@ class BlankTimesController extends AppController {
 		$this->set('blankTimes', $this->Paginator->paginate());
 	}
 
+	//ここも一旦Authは全許可にします（時間があったらログイン認証を付けましょう）
+    function beforeFilter() {
+      $this->Auth->allow();
+	}
+
 /**
  * view method
  *
