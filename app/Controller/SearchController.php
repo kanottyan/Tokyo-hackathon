@@ -13,9 +13,9 @@ class SearchController extends AppController {
  *
  * @var array
  */
+    public $uses = 'ParkingPlace';
     public $name = 'Search';
     public $components = array('Paginator');
-    public $use = 'ParkingPlaces';
     function beforeFilter() {
       $this->Auth->allow();
       //一旦全部見れるようにする
@@ -37,5 +37,7 @@ class SearchController extends AppController {
  */
     public function index() {
         $this->set('test', 'testでーす');
+        $park_data = $this->ParkingPlace->find('all');
+        $this->set(compact('park_data'));
     }
 }

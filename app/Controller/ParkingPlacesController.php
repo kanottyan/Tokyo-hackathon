@@ -57,7 +57,7 @@ class ParkingPlacesController extends AppController {
 			$this->ParkingPlace->create();
 			if ($this->ParkingPlace->save($this->request->data)) {
 				$this->Session->setFlash(__('The parking place has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' =>'blank_times' ,'action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('The parking place could not be saved. Please, try again.'));
 			}

@@ -1,4 +1,5 @@
 <div class="blankTimes form">
+	<h2>次に提供できる時間を入力して下さい<h2>
 <?php echo $this->Form->create('BlankTime'); ?>
 	<fieldset>
 		<legend><?php echo __('Add Blank Time'); ?></legend>
