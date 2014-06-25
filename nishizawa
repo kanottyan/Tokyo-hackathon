@@ -43,8 +43,7 @@ $lng =139.69170639999993;
 $sv = "localhost";
 $dbname = "easy-stopping-server";
 $user = "root";
-$pass = "24382525";
-
+$pass = "";
 //データベース接続関数
 function conndb() {
     global $conn;
